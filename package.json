@@ -1,19 +1,28 @@
 {
-  "name": "fullstack-test2",
+  "name": "next-apollo-prisma-nexus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "nexus:dev": "ts-node-dev --transpile-only --no-notify pages/api/graphql.ts",
+    "nexus:build": "tsc"
   },
   "dependencies": {
+    "@prisma/client": "^2.23.0",
+    "apollo-server": "^2.25.0",
+    "apollo-server-micro": "^2.25.0",
+    "graphql": "^15.5.0",
     "next": "10.2.3",
+    "nexus": "^1.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/react": "17.0.8",
-    "typescript": "4.3.2"
+    "prisma": "^2.23.0",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
   }
 }
