@@ -1,4 +1,4 @@
-import { apolloServer } from "../../graphql/server";
+import { apolloServer } from "../../../graphql/server";
 
 export const config = {
   api: {

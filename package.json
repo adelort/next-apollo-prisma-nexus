@@ -6,7 +6,7 @@
     "dev": "concurrently -r \"yarn nexus:dev\" \"yarn next dev\"",
     "build": "next build",
     "start": "next start",
-    "nexus:dev": "ts-node-dev --transpile-only --no-notify --respawn pages/api/graphql.ts",
+    "nexus:dev": "ts-node-dev --transpile-only --no-notify --respawn src/pages/api/graphql.ts",
     "nexus:build": "tsc",
     "reset-db": "yarn prisma migrate reset",
     "stop-infra": "docker compose down",
