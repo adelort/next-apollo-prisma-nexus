@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -r \"yarn nexus:dev\" \"yarn next dev\"",
     "build": "next build",
     "start": "next start",
-    "nexus:dev": "ts-node-dev --transpile-only --no-notify pages/api/graphql.ts",
+    "nexus:dev": "ts-node-dev --transpile-only --no-notify --respawn pages/api/graphql.ts",
     "nexus:build": "tsc",
     "reset-db": "yarn prisma migrate reset",
     "stop-infra": "docker compose down",
@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "@types/react": "17.0.8",
+    "concurrently": "^6.2.0",
     "prisma": "^2.23.0",
+    "ts-node": "^10.0.0",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.3.2"
   }
