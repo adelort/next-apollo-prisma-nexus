@@ -7,6 +7,8 @@ export const Post = objectType({
     t.model.title();
     t.model.body();
     t.model.published();
+    t.model.authorId();
+    t.model.author();
   },
 });
 
