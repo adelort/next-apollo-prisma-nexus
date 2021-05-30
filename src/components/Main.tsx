@@ -1,5 +1,6 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import React from "react";
+import { useAuthorsQuery } from "../../generated/graphql";
 
 export const authorsQuery = gql`
   query authors {
@@ -15,7 +16,7 @@ export const authorsQuery = gql`
   }
 `;
 export const Main: React.FC = () => {
-  const { data } = useQuery(authorsQuery);
+  const { data } = useAuthorsQuery();
 
   const authors = data?.authors ?? [];
 
