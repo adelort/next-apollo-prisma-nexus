@@ -14,6 +14,7 @@
     "reset-infra": "yarn stop-infra && yarn start-infra && sleep 1 && yarn prisma migrate dev"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.19",
     "@prisma/client": "^2.23.0",
     "apollo-server": "^2.25.0",
     "apollo-server-micro": "^2.25.0",
