@@ -1,6 +1,6 @@
-import { gql } from "@apollo/client";
-import React from "react";
-import { useAuthorsQuery } from "../../generated/graphql";
+import { gql } from '@apollo/client';
+import React from 'react';
+import { useAuthorsQuery } from '../../generated/graphql';
 
 export const authorsQuery = gql`
   query authors {

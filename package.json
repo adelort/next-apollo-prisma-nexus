@@ -12,7 +12,8 @@
     "stop-infra": "docker compose down",
     "start-infra": "docker compose up -d",
     "reset-infra": "yarn stop-infra && yarn start-infra && sleep 1 && yarn prisma migrate dev",
-    "gql-codegen": "graphql-codegen --config codegen.yml"
+    "gql-codegen": "graphql-codegen --config codegen.yml",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
@@ -33,7 +34,14 @@
     "@graphql-codegen/typescript-operations": "1.18.0",
     "@graphql-codegen/typescript-react-apollo": "2.2.5",
     "@types/react": "17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
     "concurrently": "^6.2.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.0",
     "prisma": "^2.23.0",
     "ts-node": "^10.0.0",
     "ts-node-dev": "^1.1.6",

@@ -1,7 +1,7 @@
-import { extendType, objectType } from "nexus";
+import { extendType, objectType } from 'nexus';
 
 export const Post = objectType({
-  name: "Post",
+  name: 'Post',
   definition(t) {
     t.model.id();
     t.model.title();
@@ -13,7 +13,7 @@ export const Post = objectType({
 });
 
 export const PostQuery = extendType({
-  type: "Query",
+  type: 'Query',
   definition(t) {
     t.crud.post();
     t.crud.posts({ filtering: true });
@@ -21,7 +21,7 @@ export const PostQuery = extendType({
 });
 
 export const PostMutation = extendType({
-  type: "Mutation",
+  type: 'Mutation',
   definition(t) {
     t.crud.createOnePost();
     t.crud.deleteManyPost();

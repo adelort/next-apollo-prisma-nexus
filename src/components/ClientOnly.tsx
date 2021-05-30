@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 export const ClientOnly: React.FC = ({ children, ...delegated }) => {
   const [hasMounted, setHasMounted] = useState(false);

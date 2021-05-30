@@ -1,14 +1,15 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { ClientOnly } from "../components/ClientOnly";
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ClientOnly } from '../components/ClientOnly';
+import React from 'react';
 
 const client = new ApolloClient({
-  uri: "/api/graphql",
+  uri: '/api/graphql',
   cache: new InMemoryCache(),
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
   return (
     <ClientOnly>
       <ApolloProvider client={client}>

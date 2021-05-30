@@ -1,7 +1,7 @@
-import { extendType, objectType } from "nexus";
+import { extendType, objectType } from 'nexus';
 
 export const Author = objectType({
-  name: "Author",
+  name: 'Author',
   definition(t) {
     t.model.id();
     t.model.name();
@@ -10,7 +10,7 @@ export const Author = objectType({
 });
 
 export const AuthorQuery = extendType({
-  type: "Query",
+  type: 'Query',
   definition(t) {
     t.crud.author();
     t.crud.authors({ filtering: true });
@@ -18,7 +18,7 @@ export const AuthorQuery = extendType({
 });
 
 export const AuthorMutation = extendType({
-  type: "Mutation",
+  type: 'Mutation',
   definition(t) {
     t.crud.createOneAuthor();
     t.crud.deleteManyAuthor();
