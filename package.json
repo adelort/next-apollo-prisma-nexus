@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -r \"yarn nexus:dev\" \"yarn next dev\"",
-    "build": "gql-codegen && next build",
+    "dev": "next dev",
+    "build": "yarn generate-schema && yarn gql-codegen && next build",
     "start": "next start",
     "nexus:dev": "ts-node-dev --transpile-only --no-notify --respawn src/pages/api/graphql.ts",
     "nexus:build": "tsc",
     "reset-db": "yarn prisma migrate reset",
     "stop-infra": "docker compose down",
     "start-infra": "docker compose up -d",
-    "reset-infra": "yarn stop-infra && yarn start-infra && sleep 1 && yarn prisma migrate dev",
+    "reset-infra": "yarn stop-infra && yarn start-infra && sleep 1 && yarn prisma migrate dev && yarn seed",
     "gql-codegen": "graphql-codegen --config codegen.yml",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "generate-schema": "ts-node-dev --transpile-only --no-notify src/pages/api/graphql.ts",
+    "vercel-build": "yarn prisma migrate deploy && yarn prisma generate && yarn build",
+    "seed": "prisma db seed --preview-feature"
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
@@ -36,7 +39,6 @@
     "@types/react": "17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
-    "concurrently": "^6.2.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
